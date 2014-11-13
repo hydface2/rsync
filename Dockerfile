@@ -1,5 +1,5 @@
-FROM ubuntu
-MAINTAINER bfosberry
+FROM ubuntu:14.04
+MAINTAINER modera
 
 RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -yq \
