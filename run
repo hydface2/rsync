@@ -1,6 +1,4 @@
 #!/bin/bash
-ALLOW=${ALLOW:-192.168.0.0/16 172.16.0.0/12}
-
 echo "$USERNAME:$PASSWORD" > /etc/rsyncd.secrets
 chmod 0400 /etc/rsyncd.secrets
 
@@ -13,11 +11,10 @@ max connections = 10
 [data]
     uid = root
     gid = root
-    hosts deny = *
-    hosts allow = ${ALLOW}
+    hosts allow = *
     read only = false
-    path = /data
-    comment = data directory
+    path = /
+    comment = root
     auth users = $USERNAME
     secrets file = /etc/rsyncd.secrets
 EOF
